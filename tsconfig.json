@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "strict": true
+  },
+  "include": ["app.tsx", "plugin-runtime.d.ts"]
+}

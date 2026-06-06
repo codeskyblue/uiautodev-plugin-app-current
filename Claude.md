@@ -1,6 +1,7 @@
 # uiauto.dev Plugin Template
 
 uiauto.dev 插件模板项目。一个插件由三个核心文件组成：
+
 - `plugin.json` — 插件元信息（名称、版本、描述）
 - `app.ts` — 插件逻辑入口，引用 `plugin-runtime.d.ts` 获取类型
 - `index.html` — 插件 UI
@@ -15,7 +16,7 @@ uiauto.dev 插件模板项目。一个插件由三个核心文件组成：
 4. 检查 `node_modules` 是否存在，不存在则 `npm install`
 5. 执行 `npm run fetch-types` 拉取类型定义.
 6. 读取刚拉取的定义文件，平台提供给插件的功能都在里面。
-6. 询问用户创建项目的具体细节，写一个方案让用户确认一下，然后就可以开发项目了。
+7. 询问用户创建项目的具体细节，写一个方案让用户确认一下，然后就可以开发项目了。
 
 ## 环境准备
 
@@ -26,10 +27,10 @@ npm run fetch-types  # 拉取 plugin-runtime.d.ts 类型定义
 
 ## 常用命令
 
-| 命令 | 说明 |
-|------|------|
-| `npm run dev` | 开发模式，监听 app.ts 变化自动编译 |
-| `npm run build` | 将 app.ts 编译为 app.js |
-| `npm run fetch-types` | 从运行时拉取类型定义文件 |
+| 命令                  | 说明                               |
+| --------------------- | ---------------------------------- |
+| `npm run dev`         | 开发模式，监听 app.ts 变化自动编译 |
+| `npm run build`       | 将 app.ts 编译为 app.js            |
+| `npm run fetch-types` | 从运行时拉取类型定义文件           |
 
 > 需要先确保 node_modules 存在，否则先 `npm install`。

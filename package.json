@@ -2,12 +2,16 @@
   "private": true,
   "scripts": {
     "fetch-types": "curl -s http://localhost:33299/plugin-runtime.d.ts -o plugin-runtime.d.ts",
-    "dev": "esbuild app.ts --bundle --outfile=app.js --watch",
-    "build": "esbuild app.ts --bundle --outfile=app.js"
+    "dev": "esbuild app.tsx --bundle --outfile=app.js --jsx=automatic --jsx-import-source=preact --watch",
+    "build": "esbuild app.tsx --bundle --outfile=app.js --jsx=automatic --jsx-import-source=preact",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "esbuild": "^0.25.0",
     "prettier": "^3.8.3",
     "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "preact": "^10.26.5"
   }
 }
