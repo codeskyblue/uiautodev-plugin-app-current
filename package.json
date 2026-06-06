@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "fetch-types": "curl -s http://localhost:33299/plugin-runtime.d.ts -o plugin-runtime.d.ts",
+    "dev": "esbuild app.ts --bundle --outfile=app.js --watch",
+    "build": "esbuild app.ts --bundle --outfile=app.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3"
+  }
+}
