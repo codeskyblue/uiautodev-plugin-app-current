@@ -1,6 +1,9 @@
 repos:
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.1.0
+  - repo: local
     hooks:
-      - id: prettier
-        files: \.(ts|html)$
+      - id: format
+        name: npm run format
+        entry: npm run format
+        language: system
+        files: \.(ts|tsx|html|json|css)$
+        pass_filenames: false
