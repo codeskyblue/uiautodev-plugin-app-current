@@ -2,6 +2,10 @@
 
 uiauto.dev 插件 — 显示当前设备上正在运行的应用信息，支持复制包名、Activity、PID，以及强制停止和启动应用。
 
+## 截图
+
+![snapshot](docs/snapshot.png)
+
 ## 功能
 
 - 自动检测设备当前前台应用的 **包名 (Package)**、**Activity**、**PID**
