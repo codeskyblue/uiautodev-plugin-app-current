@@ -1,41 +1,37 @@
-# template
+# 当前应用 (Current App)
 
-uiauto.dev desktop & server的插件模板项目。方便快速创建插件。
+uiauto.dev 插件 — 显示当前设备上正在运行的应用信息，支持复制包名、Activity、PID，以及强制停止和启动应用。
 
-## 使用步骤
+## 功能
 
-1. **Fork 本项目**，得到你自己的插件仓库
-2. 将 fork 后的项目克隆到本地插件目录：
+- 自动检测设备当前前台应用的 **包名 (Package)**、**Activity**、**PID**
+- 一键复制包名、Activity、PID 到剪贴板
+- **强制停止** 应用（`am force-stop`）
+- **启动应用**（`am start`）
+- 刷新按钮重新获取当前应用信息
 
-   ```bash
-   mkdir -p ~/.uiautodev/plugins
-   git clone 你的仓库地址 ~/.uiautodev/plugins/你的插件名
-   ```
+## 安装
 
-3. 用 Claude 打开该项目，说 **"我要初始化项目"**，按 Claude.md 中的流程完成初始化
-
-### 入门教程
-
-假设我们现在需要一个执行shell的插件。
-按照下面我说的跟AI对话。
-
-```txt
-AI问: 这个插件是做什么的？请描述一下它的功能
-你回答：我需要实现一个执行shell的插件，输出shell命令，界面上显示shell的输出。
-AI问：请选择一个合适的名字。（挑一个合适的就行）
-AI问：请提供更多的细节？
-你回答：只保留最新的一条执行历史。请直接实现吧
-```
-
-打开设备的控制界面 -> 插件 调试一下。
-很快一个简单的终端小插件就做出来了。 优化一下就可以跟小伙伴们分享了。
-
-## 本地调试
-
-启动 uiauto.dev desktop 或 server 版本，`~/.uiautodev/plugins/` 下的插件会自动加载。开发时运行：
+将项目克隆到 uiauto.dev 插件目录：
 
 ```bash
-npm run dev
+git clone https://github.com/codeskyblue/uiautodev-plugin-app-current ~/.uiautodev/plugins/uiautodev-plugin-app-current
+cd ~/.uiautodev/plugins/uiautodev-plugin-app-current
+npm install
+npm run build
 ```
 
-即可实时编译 `app.ts` 的改动。
+## 开发
+
+```bash
+npm install          # 安装依赖
+npm run fetch-types  # 拉取 plugin-runtime.d.ts 类型定义
+npm run dev          # 开发模式，监听 app.tsx 变化自动编译
+npm run build        # 编译为 app.js
+```
+
+启动 uiauto.dev desktop 或 server 版本，`~/.uiautodev/plugins/` 下的插件会自动加载。
+
+## 插件模板
+
+本项目基于 [uiauto.dev 插件模板](https://github.com/uiautodev-plugins/template) 创建。
